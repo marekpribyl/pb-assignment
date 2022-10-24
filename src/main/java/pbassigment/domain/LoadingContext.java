@@ -1,7 +1,6 @@
 package pbassigment.domain;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.google.common.annotations.VisibleForTesting;
 
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
@@ -22,8 +21,6 @@ import static java.util.Optional.empty;
  * Global loading state holder
  */
 public final class LoadingContext {
-
-    private static final Logger LOG = LoggerFactory.getLogger(LoadingContext.class);
 
     public static AtomicBoolean repositoriesLoading = new AtomicBoolean(false);
 
@@ -84,6 +81,14 @@ public final class LoadingContext {
             "repositoriesLoadedOn", repositoriesLoadedOn.format(ISO_LOCAL_DATE),
             "blockedUntil", blockedUntil.format(ISO_DATE_TIME)
         );
+    }
+
+    @VisibleForTesting
+    protected static void resetContext() {
+        repositoriesLoading.set(false);
+        loadedPages.set(initialPages());
+        repositoriesLoadedOn = LocalDate.now().minusDays(1);
+        blockedUntil = now();
     }
 
 }

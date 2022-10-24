@@ -41,7 +41,7 @@ Launch the app:
 * By design this app gives no guaranties on data consistency. Also, data is kept in memory, so it cannot survive app restart.
 * It is intended to run as single instance. If multiple instances are deployed, there is no instance synchronization, and results can be biased more than single instance (due to sharing the rate limit among instances).
 * Deleting of repositories is covered.
-* Implementation is far for optimal, it is just PoC ;-)
+* Implementation is far from optimal, it is just PoC ;-)
 
 ### Obstacles
 

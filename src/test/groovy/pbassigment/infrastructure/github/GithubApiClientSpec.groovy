@@ -5,9 +5,11 @@ import jakarta.inject.Inject
 import org.mockserver.client.MockServerClient
 import org.testcontainers.containers.MockServerContainer
 import org.testcontainers.spock.Testcontainers
+import spock.lang.Ignore
 import spock.lang.Shared
 import spock.lang.Specification
 
+@Ignore
 @MicronautTest
 @Testcontainers
 class GithubApiClientSpec extends Specification {

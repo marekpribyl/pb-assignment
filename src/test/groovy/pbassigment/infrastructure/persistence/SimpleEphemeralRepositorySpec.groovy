@@ -54,6 +54,15 @@ class SimpleEphemeralRepositorySpec extends Specification {
             statistics.get("Java") == 1.00
     }
 
+    def "Should return stale repositories if exist"() {
+        expect: 'no stale repositories'
+            repository.getStaleRepositoryNames() == [] as HashSet
+        when:
+            repository.addBareRepositoryIfMissing('staleRepository')
+        then:
+            repository.getStaleRepositoryNames() == ['staleRepository'] as HashSet
+    }
+
     def "Should remove repository"() {
         given:
             repository.addRepositoryWithLanguageInfo("Repo_1", [])
