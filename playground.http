@@ -1,0 +1,12 @@
+### all repos
+https://api.github.com/users/productboard/repos
+Accept: application/vnd.github+json
+
+### The value shown for each language is the number of bytes of code written in that language.
+GET https://api.github.com/repos/productboard/ruby-acsv/languages
+Accept: application/vnd.github+json
+
+###
+GET https://api.github.com/repos/productboard/node-resque/languages
+
+

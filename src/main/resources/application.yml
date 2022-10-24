@@ -1,0 +1,26 @@
+micronaut:
+  application:
+    name: PbAssigment
+  server:
+    port: 9090
+
+  http:
+    client:
+      http-version: 2.0
+
+logger:
+  levels:
+    root: INFO
+    pbassigment: DEBUG
+
+netty:
+  default:
+    allocator:
+      max-order: 3
+
+github:
+  organization: productboard
+  api:
+    url: https://api.github.com
+    rateLimitWindowSeconds: 3600
+
